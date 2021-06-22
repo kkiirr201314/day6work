@@ -1,7 +1,7 @@
 fun main(){
-    val greetingFunction:() -> String = {
+    val greetingFunction:(String) -> String = { playerName ->
         val currentYear = 2021
-        "歡迎光臨 SimVillage ，鎮長！ (copyrigth $currentYear)"
+        "歡迎光臨 SimVillage ，$playerName！ (copyrigth $currentYear)"
     }
-    println(greetingFunction())
+    println(greetingFunction("李政龍"))
 }
