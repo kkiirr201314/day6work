@@ -1,10 +1,10 @@
 fun main(){
-    val greetingFunction = { playerName:String,numBulidings:Int ->
+    runSimulation("李政龍") { playerName,numBulidings ->
         val currentYear = 2021
         println("新建 $numBulidings 棟房屋")
         "歡迎光臨 SimVillage ，$playerName！ (copyrigth $currentYear)"
     }
-    runSimulation("李政龍",greetingFunction)
+
 }
 fun runSimulation(playerName: String, greetingFunction: (String, Int) -> String)
 {
