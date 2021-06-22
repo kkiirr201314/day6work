@@ -1,20 +1,19 @@
-import javafx.beans.binding.NumberBinding
+fun main() {
+    runSimulation()
+}
+fun runSimulation()
+{
+    val greetingFunction = ConfigureGreetingFunction()
+    println(greetingFunction("李政龍"))
+}
 
-fun main(){
-    runSimulation("李政龍",  ::printConstructionCost) { playerName,numBulidings ->
+fun ConfigureGreetingFunction(): (String) -> String {
+    val structureType = "醫院"
+    var numBulidings = 5
+    return { playerName: String ->
         val currentYear = 2021
-        println("新建 $numBulidings 棟房屋")
+        numBulidings += 1
+        println("新建 $numBulidings 間 $structureType")
         "歡迎光臨 SimVillage ，$playerName！ (copyrigth $currentYear)"
     }
-
-}
-inline fun runSimulation(playerName: String, costPrinter: (Int) -> Unit, greetingFunction: (String, Int) -> String)
-{
-    val numberBindings = (1..3).shuffled().last()
-    costPrinter(numberBindings)
-    println(greetingFunction(playerName, numberBindings))
-}
-fun printConstructionCost(numberBindings: Int){
-    val cost = 500
-    println("建造成本: ${cost * numberBindings}")
 }
