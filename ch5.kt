@@ -6,7 +6,7 @@ fun main(){
     }
 
 }
-fun runSimulation(playerName: String, greetingFunction: (String, Int) -> String)
+inline fun runSimulation(playerName: String, greetingFunction: (String, Int) -> String)
 {
     val numberBindings = (1..3).shuffled().last()
     println(greetingFunction(playerName, numberBindings))
