@@ -1,3 +1,5 @@
+import javafx.beans.binding.NumberBinding
+
 fun main(){
     runSimulation("李政龍") { playerName,numBulidings ->
         val currentYear = 2021
@@ -10,4 +12,8 @@ inline fun runSimulation(playerName: String, greetingFunction: (String, Int) -> 
 {
     val numberBindings = (1..3).shuffled().last()
     println(greetingFunction(playerName, numberBindings))
+}
+fun printConstructionCost(numberBindings: Int){
+    val cost = 500
+    println("建造成本: ${cost * numberBindings}")
 }
